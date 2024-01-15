@@ -1,0 +1,580 @@
+/* Base */
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    color: #000;
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    text-align: center;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1;
+}
+
+h1, 
+.h1{
+    font-size: 3.1rem;
+    
+}
+
+h2, 
+.h2{
+    font-size: 2.8rem;
+    text-transform: uppercase;
+}
+
+h3, 
+.h3{
+    font-size: 2.1rem;
+}
+
+/*pour enlevé le truc violet des liens par défaut*/
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+ul{
+    padding-left: 2rem;
+}
+
+li{
+    margin-bottom: 1rem;
+}
+
+/*Les listes*/
+
+.list-unstyled{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Container*/
+
+.container{
+    padding: 1rem 2rem;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.grid{
+    display: flex;
+   flex-wrap: wrap;
+}
+
+
+
+.grid__item{
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 2rem;
+}
+
+
+/*Compatiblité entre le téléphone et les grands écrans*/
+
+@media screen and (max-widht:749px) {
+    .containder{
+        margin: 0;
+        padding: 0;
+        max-width: auto;
+    }
+}
+
+/*Grand ecran*/
+
+@media screen and (min-widht:750px) {
+    .containder{
+        max-width: 1200px;
+        margin: 0 auto ;
+        padding: 2rem;
+    }
+} 
+    
+/*sections*/
+
+section{
+    padding: 20px;
+}
+
+.section__header{
+    text-align: center;
+}
+
+.section__title{
+    font-size: 3.8rem;
+    margin-top: 0;
+}
+
+/*Header*/
+
+/*position stiky pour figé le header*/
+
+.header{ 
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 2px;
+}
+
+.header .logo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: 12px;
+    letter-spacing: 2px;
+}
+
+.herader li{
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.header a{
+    color: #333;
+}
+
+.header a:hover{
+    color: red;
+}
+
+.header .right{
+    align-items: center;
+    display: flex;
+}
+
+
+/*Header*/
+
+.header li{
+    display: inline-flex;
+    align-items: center;
+    padding: 0 5px;
+  
+}
+
+
+/*Menu pour masqué sur téléphone*/
+
+
+
+
+.navbar{
+    display: none;
+}
+
+
+/*Socials*/
+
+.socials {
+    display: flex;
+}
+
+.socials a{
+    padding: 0 2px;
+}
+
+.socials li{
+    margin-bottom: 0;
+}
+
+/*Burger*/
+
+.burger{
+    background: none;
+    border: none;
+    width: 32px;
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+    margin: 1rem;
+}
+
+.burger .bar{
+    display: block;
+    width: 22px;
+    height: 3px;
+    background-color: #000
+}
+
+.burger .bar::before, .burger .bar::after{
+    display: block;
+    content:"";
+    width: 22px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+}
+
+.burger .bar::before{
+    transform: translateY(-8px);
+}
+
+
+.burger .bar::after{
+    transform: translateY(-8px);
+}
+
+
+@media screen and (Min-width:750px) {
+    .navbar{
+        display: flex;
+    }
+
+
+    .burger{
+        display: none;
+       }
+}
+
+
+.hero{
+    background: url(./images/pngtree-abstract-line-background-with-aqua-blue-image_355686.jpg);
+    color: #fff;
+    padding: 1rem 0 0 0;
+}
+
+.hero .title{
+    color: inherit;
+    font-size: 4rem;
+    margin: 1.6rem 0 0 0;
+    font-weight: 700;
+}
+
+/*pour rendre un peu plus gros le titre developpeur web*/
+
+.hero__item span{
+    text-transform: uppercase;
+}
+
+.hero__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero__item.left{
+    animation-duration: 1s;
+}
+
+.hero__item.right{
+    animation-duration: 1s;
+}
+
+/*mettre l'image en haut avant le texte*/
+
+@media screen and (max-width:749px){
+    .hero__item.left{
+        order: 2;
+    }
+    .hero__item.right{
+        order: 1;
+    }
+
+}
+
+/*compatibilité sur grand écran*/
+
+@media screen and (min-width:750px){
+    .hero__item{
+        flex: 1 0 50%;
+        text-align: left;
+    }
+
+    .hero .title{
+            font-size: 5rem;
+    }
+
+    .hero__item.left{
+        align-items: flex-start;
+    }
+
+    .hero__avatar img{
+        max-width: 500px;
+        border-radius: 50%;
+}
+
+}
+
+@media screen and (Min-width:750px){
+    .about img{
+        padding-right: 3rem;
+    }
+}
+
+.Service{
+    background: #eee
+}
+
+
+
+.Service__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+
+    border: 2px solid;
+    border-radius: 100%;
+}
+
+.Services {
+    background: #F5F5F5;
+  }
+  
+  .Service__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border: 2px solid #5b6c78;
+    border-radius: 50%;
+  }
+  
+  .Service__icon svg {
+    height: 35px;
+  }
+  
+  .Service__content {
+    flex: 1;
+  }
+  
+  .Service h3 {
+    margin-bottom: 0;
+  }
+  
+  @media screen and (max-width:749px) {
+    .Service {
+      text-align: center;
+    }
+  
+    .Service__icon {
+      margin: 0 auto;
+    }
+  }
+  
+  @media screen and (min-width:750px) {
+    .Service {
+      display: flex;
+      align-items: center;
+    }
+  
+    .Service__icon {
+      margin-right: 2rem;
+    }
+}
+
+.skills h4, .skills p{
+    color: #000;
+    margin: 0 0 0.3rem;
+}
+
+.skills img{
+    width: 50%;
+}
+
+
+
+.portfolio {
+    background: #F5F5F5;
+  }
+  
+  .portfolio .grid__item {
+    max-width: 50%;
+    margin-bottom: 0;
+    opacity: 1;
+    transition: all 1s ease;
+  }
+  
+  .portfolio .grid__item.hide {
+    opacity: 0;
+    max-width: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .4s ease;
+  }
+  
+  .portfolio-filters .grid__item {
+    max-width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .portfolio-filters a {
+    color: var(--color-body);
+    background: #EEE;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .portfolio-filters a.active {
+    color: #FFF;
+    background: #5b6c78;
+  }
+
+.card {
+  background: #FFF;
+  text-transform: uppercase;
+  position: relative;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  border: 1px solid #EEE;
+  overflow: hidden;
+}
+
+.card__inner {
+  padding: 2rem;
+}
+
+.card__title {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+}
+
+.card__overlay {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  top: 110%;
+  transition: all .3s;
+
+}
+
+.card__overlay a {
+  font-size: 4.5rem;
+  color: #FFF;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.card:hover .card__overlay {
+  top: 0;
+}
+
+.form {
+  max-width: 600px;
+  margin: 4rem auto 0 auto;
+}
+
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form textarea {
+  min-height: 200px;
+}
+
+.form .btn {
+  border: none;
+  background: var(--color-body);
+  color: #FFF;
+  width: auto;
+  min-width: 160px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.form .btn:hover {
+  cursor: pointer;
+  background: #000;
+}
+
+/* Footer */
+
+footer {
+  background: #000;
+  color: #EEE;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .grid {
+  align-items: center;
+}
+
+footer .socials {
+  justify-content: center;
+  text-align: center;
+}
+
+footer .socials li {
+  padding: 0 .7rem;
+}
+
+footer .socials a {
+  color: #FFF;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+  padding: 1rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  transition: all .4s;
+}
+
+footer .socials a:hover {
+  background: #FFF;
+  color: var(--color-body);
+}
+
+.toto {
+  color: #555;
+}
+
+@media screen and (min-width:750px) {
+  footer {
+    text-align: left;
+  }
+
+  footer .grid__item {
+    max-width: 33.333%;
+  }
+}
+
+
+
+
+
